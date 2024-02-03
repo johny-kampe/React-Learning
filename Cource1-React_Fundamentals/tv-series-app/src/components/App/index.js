@@ -1,20 +1,10 @@
 import React, {Component} from 'react';
+import 'whatwg-fetch';
 import Intro from '../Intro';
+import Series from '../../containers/Series';
 import './App.css';
 
 class App extends Component {
-  state = {
-    series: []
-  }
-
-  componentDidCatch(){
-    const series = ["Vikings", "Game of Thrones"]
-
-    setTimeout(() => {
-      this.setState({series : series})
-    }, 2000);
-  }
-
   render(){
     return (
       <div className="App">
@@ -22,7 +12,7 @@ class App extends Component {
           <h1 className='App-title'> TV Series List </h1>
         </header>
         <Intro message="TEST TEST"/>
-        The length of series array - {this.state.series.length}
+        <Series />
       </div>
     );
   }
